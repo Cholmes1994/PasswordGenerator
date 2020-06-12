@@ -7,12 +7,27 @@ var specialChar = ["`", "~", "!", "#", "$", "%", "^", "&", "*", "(", ")", "+", "
 
 
 
-function generatePassword(){
-//Prompt the user to choose number of characters
+function generatePassword() {
+  //Prompt the user to choose number of characters
   var numofChar = prompt("How many characters do you want in your password (must be between 8 and 100)?")
+  
+  //Will revert back to original setup if password is too short
+  if (numofChar < 8) {
+    alert("Password must be at least 8 characters long")
+  }
+  //If password length meets criteria, then we can confirm what kinds of characters the user wants to use
+  if (numofChar >= 8 && numofChar <= 128) {
+    var askUpper = confirm("Would you like uppercase letters in your password?")
+    var askLower = confirm("Would you like lowercase letters in your password?")
+    var askNumbers = confirm("Would you like numbers in your password?")
+    var askSpecialChar = confirm("Would you like special characters in you password?")
+  }
 
+  if (askUpper) {
+    
+  }
 
-return "This is the Password"
+  return "This is the password"
 }
 
 // Write password to the #password input
@@ -24,5 +39,7 @@ function writePassword() {
 
 }
 
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
