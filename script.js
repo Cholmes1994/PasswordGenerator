@@ -8,22 +8,28 @@ var specialChar = ["`", "~", "!", "#", "$", "%", "^", "&", "*", "(", ")", "+", "
 
 
 function generatePassword() {
+  password = "";
   //Prompt the user to choose number of characters
-  var numofChar = prompt("How many characters do you want in your password (must be between 8 and 100)?")
+  var numofChar = prompt("How many characters do you want in your password (must be between 8 and 128)?");
   
   //Will revert back to original setup if password is too short
   if (numofChar < 8) {
-    alert("Password must be at least 8 characters long")
+    alert("Password must be at least 8 characters long");
   }
   //If password length meets criteria, then we can confirm what kinds of characters the user wants to use
   if (numofChar >= 8 && numofChar <= 128) {
-    var askUpper = confirm("Would you like uppercase letters in your password?")
-    var askLower = confirm("Would you like lowercase letters in your password?")
-    var askNumbers = confirm("Would you like numbers in your password?")
-    var askSpecialChar = confirm("Would you like special characters in you password?")
+    var askUpper = confirm("Would you like uppercase letters in your password?");
+    var askLower = confirm("Would you like lowercase letters in your password?");
+    var askNumbers = confirm("Would you like numbers in your password?");
+    var askSpecialChar = confirm("Would you like special characters in you password?");
+  
+  } else{
+    alert("You must select at least one character type.");
   }
 
+
   if (askUpper) {
+    password += pass
     
   }
 
