@@ -5,11 +5,22 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["`", "~", "!", "#", "$", "%", "^", "&", "*", "(", ")", "+", ",", "-", "/", ":", ";", "?", ">", "@", "[", "]", "{", "}", "|"];
 var passwordOptions = []
-var password = []
+var passwordFinal = []
 
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-  password = "";
+
 
   //Prompt the user to choose number of characters
   var numofChar = prompt("How many characters do you want in your password (must be between 8 and 128)?");
@@ -43,31 +54,25 @@ function generatePassword() {
   //For Loop
 
   for (let index = 0; index < numofChar; index++) {
-    var randomNumber = condenseArray[Math.floor(Math.random) * numofChar.length];
+    var randomNumber = condenseArray[Math.floor(Math.random() * numofChar.length)];
 
-    password.push(randomNumber);
+    console.log(randomNumber)
+
+    passwordFinal.push(randomNumber);
+
+
   }
+//Return the password onto the display
 
-
-
-
-
-
-  
-}
-
-return password;
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+  return passwordFinal.join("");
 }
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+
 
