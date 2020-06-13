@@ -36,22 +36,27 @@ function generatePassword() {
   }
 
 
-  var condenseArray = passwordOptions.flat()
+  var condenseArray = passwordOptions.flat();
 
   console.log(condenseArray)
 
   //For Loop
 
+  for (let index = 0; index < numofChar; index++) {
+    var randomNumber = condenseArray[Math.floor(Math.random) * numofChar.length];
+
+    password.push(randomNumber);
+  }
+
+
+
+
+
+
   
-
-
-
-
-
-
-  return "This is the password"
 }
 
+return password;
 
 // Write password to the #password input
 function writePassword() {
